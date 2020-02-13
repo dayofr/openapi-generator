@@ -67,14 +67,16 @@ class {{classname}} {
       }
       {{/isFile}}
       {{/formParams}}
-      if(hasFields)
+      if(hasFields) {
         postBody = mp;
+      }
     }
     else {
       {{#formParams}}
       {{^isFile}}
-      if ({{paramName}} != null)
+      if ({{paramName}} != null) {
         formParams['{{baseName}}'] = parameterToString({{paramName}});
+      }
       {{/isFile}}
       {{/formParams}}
     }
